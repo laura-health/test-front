@@ -1,0 +1,41 @@
+<div class="form">
+    <h2>Login</h2>
+    <form
+        name="loginForm"
+        ng-submit="loginForm.$valid && viewModel.login()"
+        novalidate
+    >
+        <div ng-class="{ 'has-error': loginForm.$submitted && loginForm.username.$invalid }">
+            <label for="username">
+                Usuário
+            </label>
+            <input
+                type="text"
+                name="username"
+                class="input-text"
+                ng-model="viewModel.username"
+                required
+            />
+        </div>
+        <div ng-class="{ 'has-error': loginForm.$submitted && loginForm.password.$invalid }">
+            <label for="password">
+                Senha
+            </label>
+            <input
+                type="password"
+                name="password"
+                class="input-text"
+                ng-model="viewModel.password"
+                required
+            />
+        </div>
+        <div>
+            <button ng-disabled="viewModel.loading" class="btn btn-primary">
+                Entrar
+            </button>
+        </div>
+        <div ng-if="viewModel.error" class="alert alert-danger">
+            {{viewModel.error}}
+        </div>
+    </form>
+</div>
