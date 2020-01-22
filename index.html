@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="content/images/favicon.png">
+
+        <!-- Defining the viewport for width adaptive purpose -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jean Mayer - Robô Laura</title>
+
+        <!-- Font awesome css -->
+        <link href="content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="content/styles/bundle.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <ui-view></ui-view>
+
+        <footer>
+            <p class="text-center">
+                Developed by <a href="https://www.linkedin.com/in/jean-michael-m-345ba092/" target="_blank">Jean Michael Mayer</a>
+                for
+                <a href="https://www.laura-br.com/" target="_blank"> Robô Laura </a>
+            </p>
+        </footer>
+
+        <!-- angular scripts -->
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="node_modules/ngstorage/ngStorage.min.js"></script>
+
+        <!-- application scripts -->
+        <script src="app.js"></script>
+        <script src="services/auth.service.js"></script>
+        <script src="dashboard/index.controller.js"></script>
+        <script src="login/index.controller.js"></script>
+
+        <!-- scripts para criar um back end falso -->
+        <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+        <script src="helpers/mock-backend.js"></script>
+    </body>
+
+</html>

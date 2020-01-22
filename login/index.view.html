@@ -1,0 +1,24 @@
+<div class="login-container">
+    <div class="left-box">
+        <!-- Background moving effect -->
+        <div class="background-fade" ng-include="'login/partials/background_moving.html'"></div>
+
+        <img class="logo" src="content/images/logo-negative.png" alt="Robô Laura">
+        <div class="text">
+            <h3>{{ viewModel.title }}</h3>
+            <p>
+                {{ viewModel.text }}
+            </p>
+            <div class="btn-group">
+                <button class="btn btn-primary">
+                    SAIBA MAIS
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fa fa-rss"></i> IR PARA O BLOG
+                </button>
+            </div>
+        </div>
+        <div class="login-form" ng-include="'login/partials/login_form.html'"></div>
+    </div>
+    <div class="right-box login-form" ng-include="'login/partials/login_form.html'"></div>
+</div>

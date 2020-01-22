@@ -1,0 +1,19 @@
+<h3>
+    Top Stocks
+</h3>
+
+<hr>
+
+<div class="item-list">
+    <ul>
+        <li ng-repeat="item in viewModel.right_menu_list">
+            <!-- the colors here should be dynamic, according to the result (positive/negative) -->
+            <button type="button" class="btn pct">
+                <i class="fa {{ item.icon }}"></i> {{ item.pct }}
+            </button>
+            <span class="title">
+                {{ item.title }}
+            </span>
+        </li>
+    </ul>
+</div>
