@@ -4,7 +4,6 @@
     border-radius: 5px
     transition: .3s
     outline: none
-    letter-spacing: 1px
     text-transform: uppercase
 
     &:hover
@@ -51,3 +50,27 @@
 
     &:focus
         box-shadow: 0 0 5px #f0f0f0
+
+.menu-list
+    button
+        cursor: pointer
+        padding: 10px 10%
+        width: 100%
+        text-align: left
+        border: none
+        background: none
+        outline: none
+        font-size: 16px
+        transition: .3s
+
+        i
+            margin-right: 20px
+            font-size: 17px
+            transition: .3s
+
+        &:hover
+            background-color: rgba(244, 161, 41, .03)
+            transform: scale(1.05)
+
+            i
+                color: $primary-color

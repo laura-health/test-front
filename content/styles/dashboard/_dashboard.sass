@@ -1,0 +1,82 @@
+.dashboard-container
+    display: flex
+    height: calc(100% - 74px)
+
+    hr
+        border-top: 1px solid rgba(0, 0, 0, .1)
+
+    .left-box
+        height: 100%
+        background-color: rgba(255, 255, 255, 1)
+        flex: 2
+        overflow-x: hidden
+        overflow-y: auto
+
+        .card
+            width: auto
+            text-align: center
+            padding: 10px
+            color: $smooth-gray
+
+            .profile-photo
+                max-width: 100px
+                max-height: 100px
+                margin-top: 15px
+                border-radius: 100%
+
+            .profile-name
+                font-size: 17px
+                padding: 15px 15px 5px 15px
+                font-weight: bold
+
+            .profile-location
+                font-size: 14px
+                padding: 5px 10px 10px 10px
+
+        .followers-container
+            display: flex
+
+            div
+                flex: 1
+
+            .title
+                font-weight: bold
+
+            .value
+                padding: 10px 0
+                font-size: 14px
+
+    .center-box
+        height: 100%
+        background-color: rgba(0, 0, 0, .01)
+        flex: 8
+        overflow: auto
+
+    .right-box
+        height: 100%
+        background-color: rgba(255, 255, 255, 1)
+        flex: 2
+        overflow: auto
+
+        h3
+            text-align: center
+            margin-top: 20px
+            font-size: 17px
+
+        .item-list
+            li
+                transition: .3s
+                cursor: pointer
+
+                &:hover
+                    background-color: rgba(244, 161, 41, .03)
+                    transform: scale(1.05)
+            button
+                background: none
+                border: none
+
+            .title
+                font-weight: bold
+
+            .pct
+                color: #28A745

@@ -1,5 +1,7 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1>Página Principal</h1>
-    <p>Seja Bem-Vindo!</p>
-    <p><a href="#/login">Sair</a></p>
+<header ng-include="'dashboard/partials/header.html'"></header>
+
+<div class="dashboard-container">
+    <div class="left-box" ng-include="'dashboard/partials/left_box.html'"></div>
+    <div class="center-box" ng-include="'dashboard/partials/center_box.html'"></div>
+    <div class="right-box" ng-include="'dashboard/partials/right_box.html'"></div>
 </div>

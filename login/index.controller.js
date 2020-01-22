@@ -16,7 +16,7 @@
             initController();
 
             function initController() {
-                //Aqui iremos resetar o status do login:
+                // Case the user goes to login, he loses the authentication
                 AuthenticationService.Logout();
             };
 

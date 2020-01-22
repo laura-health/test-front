@@ -1,0 +1,37 @@
+<div class="form">
+    <h2>Faça o Login</h2>
+    <form
+        name="loginForm"
+        ng-submit="loginForm.$valid && viewModel.login()"
+        novalidate
+    >
+        <div class="input-container">
+            <input
+                type="text"
+                name="username"
+                class="input-text"
+                placeholder="Usuário"
+                ng-model="viewModel.username"
+                required
+            />
+        </div>
+        <div class="input-container">
+            <input
+                type="password"
+                name="password"
+                class="input-text"
+                placeholder="Senha"
+                ng-model="viewModel.password"
+                required
+            />
+        </div>
+        <div>
+            <button ng-disabled="viewModel.loading" class="btn btn-primary">
+                <i class="fa fa-sign-in"></i> Entrar
+            </button>
+        </div>
+        <div ng-if="viewModel.error" class="alert alert-danger">
+            {{viewModel.error}}
+        </div>
+    </form>
+</div>

@@ -6,11 +6,10 @@
             .config(config)
             .run(run);
 
+        // Defining routes and controllers
         function config($stateProvider, $urlRouterProvider) {
-            //Rota default:
             $urlRouterProvider.otherwise("/");
 
-            //Rotas da Aplicação:
             $stateProvider
                 .state('dashboard', {
                     url: '/',
@@ -27,17 +26,17 @@
         }
 
         function run($rootScope, $http, $location, $localStorage) {
-            // aqui é para manter o usuário logado mesmo se for atualizar a página:
+            // If user is logged, doesnt go to login
             if ($localStorage.currentUser) {
                 $http.defaults.headers.common.Authorization = 'Coders ' + $localStorage.currentUser.token;
             }
 
-            //Aqui iremos redirecionar para a página de Login, caso o usuário não esteja logado:
+            // Validating if its logged or not
             $rootScope.$on('$locationChangeStart', function(event, next, current) {
-                var paginasPublicas = ['/login'];
-                var paginaRestrita = paginasPublicas.indexOf($location.path()) === -1;
+                var publicPages = ['/login'];
+                var restrictPages = publicPages.indexOf($location.path()) === -1;
 
-                if (paginaRestrita && !$localStorage.currentUser) {
+                if (restrictPages && !$localStorage.currentUser) {
                     $location.path('/login');
                 }
             });

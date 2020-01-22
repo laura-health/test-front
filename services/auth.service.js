@@ -19,28 +19,28 @@
                         password: password
                     })
                     .success(function(response) {
-                        //Caso o login efetuado pelo usuário seja satisfatório então enviará um token via response:
+                        // Receive token if login is ok
                         if (response.token) {
-                            //Armazenará localmente o usuário e o token para que mantenha o usuário logado em caso de dar um refresh nas páginas:
+                            // Save the data in local storage
                             $localStorage.currentUser = {
                                 username: username,
                                 token: response.token
                             };
 
-                            //Aqui estamos adicionando um token jwt no header de todos os requests das solicitações feitas via $http
+                            // Adds jwt in every request
                             $http.defaults.headers.common.Authorization = 'Coders ' + response.token;
 
-                            //Aqui iremos executar um callback como true para indicar que o login foi bem sucedido:
+                            // Returns login success
                             callback(true);
                         } else {
-                            //e callback como false para indicar que o login não foi bem sucedido:
+                            // Returns login error
                             callback(false);
                         }
                     });
             }
 
             function Logout() {
-                //Aqui estaremos removendo todos os usuários guardados via localStorage e limparemos auth header do http:
+                // Cleans local storage and authorization
                 delete $localStorage.currentUser;
                 $http.defaults.headers.common.Authorization = '';
             }

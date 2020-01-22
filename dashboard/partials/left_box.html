@@ -1,0 +1,41 @@
+<div class="card">
+    <img class="profile-photo" src="content/images/laura.png" alt="Profile photo">
+
+    <div class="profile-name">
+        <!-- All data here should come from local storage/database -->
+        {{ "Laura" }}
+    </div>
+
+    <div class="profile-location">
+        {{ "Curitiba - PR" }}
+    </div>
+</div>
+<hr>
+<div class="card followers-container">
+    <div class="followers">
+        <div class="title">
+            Followers
+        </div>
+        <div class="value">
+            {{ "36.586" }}
+        </div>
+    </div>
+    <div class="following">
+        <div class="title">
+            Following
+        </div>
+        <div class="value">
+            {{ "4.248" }}
+        </div>
+    </div>
+</div>
+<hr>
+<div class="menu-list">
+    <ul>
+        <li ng-repeat="item in viewModel.left_menu_list">
+            <button type="button" ng-click="viewModel.redirect(item.link)">
+                <i class="fa {{ item.icon }}"></i> {{ item.title }}
+            </button>
+        </li>
+    </ul>
+</div>

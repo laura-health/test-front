@@ -5,25 +5,26 @@
       .module('app')
       .run(setupBackEndMock);
 
-    //Aqui estamos criando um método que será responsável por simular uma api no lado do Back-End
+    // Creates the fake user
+    // (i know this is horrible)
+    // i wish i had more time to make it right with database persistence and etc.
     function setupBackEndMock($httpBackend) {
       var testUsuario = {
-        username: 'teste',
-        password: 'teste',
-        nome: 'Teste',
-        sobrenome: 'Usuario'
+        username: 'admin',
+        password: 'admin',
+        nome: 'Jean',
+        sobrenome: 'Mayer'
       };
 
-      //Aqui estamos criando uma api (end point) de autenticação falsa:
+      // Creates a fake endpoint
       $httpBackend.whenPOST('/api/authenticate').respond(function(method, url, data) {
 
-        //Irá pegar os parâmetros inseridos e enviar logo em seguida via post
         var params = angular.fromJson(data);
 
-        // Aqui irá verificar se as credenciais do usuário estão corretas e retornará um jwt token falso se os dados forem válidos:
+        // Check user/password
         if (params.username === testUsuario.username && params.password === testUsuario.password) {
           return [200, {
-            token: 'jwt-token-mockeado'
+            token: 'jwt-token-laura'
           }, {}];
         } else {
           return [200, {}, {}];
