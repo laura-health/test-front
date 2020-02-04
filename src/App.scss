@@ -1,0 +1,170 @@
+$black: black;
+$d-blue: darkblue;
+$l-blue: blue;
+$l-gray: #e8e8e8;
+$l-gray-2: rgba(200,200,200,0.7);
+$primary-blue: #184fdb;
+$yellow: #ffc526;
+$red: #FF1D1D;
+$green: #11c900;
+.d-flex { display: flex; }
+.flex-flow-column { flex-flow: column; }
+.align-items-center { align-items: center; }
+.justify-content-center { justify-content: center; }
+.justify-content-around { justify-content: space-around; }
+.gray-txt {  color: gray; }
+.active-txt { color: darkblue !important; }
+.black-txt { color: black; }
+.blue-txt { color: $primary-blue; }
+.yellow-txt { color: $yellow; }
+.red-txt { color: $red; }
+.green-txt { color: $green; }
+.container { padding-left: 15px; padding-right: 15px; }
+.text-align-center { text-align: center; }
+.text-align-left { text-align: left; }
+.text-align-right { text-align: right; }
+.w-100 { width: 100%; }
+.no-padding { padding: 0; }
+.no-margin { margin: 0; }
+.small-avatar { max-height: 30px; }
+.toast { display: flex; justify-content: center; height: 30px; width: 30px; text-align: center; font-weight: 700; border-radius: 50%; background-color: $d-blue; color: white; border: none; text-decoration: none; align-items: center; p { margin: 0; } }
+html * {font-family: 'Roboto', sans-serif; transition: ease-in-out .1s}
+body { background-color: $l-gray; margin: 0; padding: 0; }
+.application { display: flex;  margin: 0; padding: 0; }
+
+.navigation {
+  width: 20%;
+  .user-space {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    border-bottom: 2px solid $l-gray-2;
+    .responsive-img {
+      padding: 15px;
+      max-width: 100%;
+      max-height: 120px;
+    }
+    .username {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .userposition {
+      margin-top: 0;
+    }
+  }
+  .user-data{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 2px solid $l-gray-2;
+    .followers,.following {
+      text-align:center;
+    }
+  } .menu {
+    .nav  {
+      padding: 0;
+      .nav-item {
+        padding: 0 40px 0 40px;
+        &:hover {
+          border-left: 2px solid $d-blue;
+          a {
+            color: $d-blue;
+          }
+        }
+        display: flex;
+        align-items: center;
+        list-style: none;
+        a {
+          width: 100%;
+          text-decoration: none;
+        }
+        &.active {
+          border-left: 2px solid $d-blue;
+        }
+      }
+    }
+  }
+}
+
+.main-section {
+  margin-top: 0px;
+  padding-top: 0px;
+  width: 60%;
+  .tabs {
+    a {
+      display: flex;
+      width: 33%;
+      height: 100%;
+      text-decoration: none;
+    }
+    display: flex;
+    justify-content: space-around;
+    .tab {
+      margin-left: 15px;
+      margin-right: 15px;
+      padding: 15px;
+      border: 1px solid $d-blue;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-top: none; width: 100%;
+      background-color: white;
+      &.active {
+        transform: scale(120%);
+        background-color: $primary-blue;
+        h3,p {
+          color: white;
+        }
+      }
+    }
+  }
+  .graph {
+    min-height: 420px;
+  }
+  .list {
+    display: flex;
+    .latest {
+      width: 60%;
+      .item {
+        border-radius: 10px;
+        background-color: white;
+        margin-top: 10px;
+        list-style: none;
+        .container {
+          justify-content: space-around;
+        }
+      }
+    }
+    .popular {
+      width: 40%;
+      .item {
+        border-radius: 10px;
+        background-color: white;
+        margin-top: 10px;
+        list-style: none;
+        .container {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+
+.tab-section {
+  background-color: white;
+  width: 20%;
+  .container {
+    .title {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      .search-promp {
+        float: right;
+      }
+    }
+  }
+}
