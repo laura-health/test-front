@@ -1,0 +1,10 @@
+.navigation {
+  .user-space {
+    .responsive-img {
+      max-width: 100%;
+    }
+    .username {
+      text-transform: uppercase;
+    }
+  }
+}
